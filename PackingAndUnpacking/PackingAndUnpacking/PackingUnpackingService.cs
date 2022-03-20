@@ -21,6 +21,8 @@ namespace PackingAndUnpacking
             Dictionary<int, int> listOfPoint = new Dictionary<int, int>();
             ArrayList arrayOfObject = new ArrayList();
             
+            
+            
             for (var i = 1; i <= 10; i++)
             {
                 //1,1;2,2;...
@@ -108,7 +110,7 @@ namespace PackingAndUnpacking
                 y = pointResult.x / pointResult.y
             };
         }
-        
+
         //try - catch 
         // в случае проблем - бросаем КОНТРОЛИРУЕМОЕ исключение
         private Point GetPointWithControlledException(object point)
