@@ -83,5 +83,30 @@ namespace PackingAndUnpacking
             var result = Convert.ToInt32(Console.ReadLine());
             return result;
         }
+        
+        private static void GetUserRoleFromDatabase (Guid userId)
+        {
+            //получение из базы данных int roleId = db.UserRoles.Where(r => r.UserId == userId).RoleId
+            int roleId = 1;
+            
+            Dictionary<int, string> otherRolesDictionary = new Dictionary<int, string>()
+            {
+                {1, "Administrator"}
+            };
+            var roleName = otherRolesDictionary[roleId];
+            if (roleId == 1 || roleId == 4 || roleId == 5)
+            {
+                var mainPage = "AdminPage";
+                var userRoleNameFromDict = otherRolesDictionary[roleId];
+            }
+
+            var role = UserRole.Adminstrator;
+            if (roleId == (int) UserRole.Adminstrator ||
+                roleId == (int) UserRole.Teacher)
+            {
+                var mainPage = "AdminPage";
+                var userRoleName = UserRole.Adminstrator.ToString();
+            }
+        }
     }
 }
