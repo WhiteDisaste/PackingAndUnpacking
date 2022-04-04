@@ -36,7 +36,20 @@ namespace PackingAndUnpacking
 
             }
             //...
+
+
+            //Принимаем на вход строку символов
+            //Проверить с помощью is, что введенная строка - это int
+            //Преобразовать с помощью as в int и вывести результат число * 100
+            Console.WriteLine("Введите строку");
+            var stroka = GetStringFromConsole();
+            if (stroka is int)
+            {
+                // тип пер1 = пер2 as тип
+                int? per1 = stroka as int?;
+            }
         }
+    
 
         private List<string> str = new List<string>();
 
@@ -58,6 +71,17 @@ namespace PackingAndUnpacking
             {
                 throw new InvalidOperationException();
             }
+        }
+
+        private static object GetStringFromConsole()
+        {
+            object result = Console.ReadLine();
+            return result;
+        }
+        private static object GetIntFromConsole()
+        {
+            var result = Convert.ToInt32(Console.ReadLine());
+            return result;
         }
     }
 }
